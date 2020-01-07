@@ -35,7 +35,7 @@
     &__Icons {
         position:relative;
         padding:3rem 0 0;
-        min-height:17.8rem;
+        min-height:14rem;
 
 
         display:flex;
@@ -113,15 +113,29 @@
             border-radius: 50%;
             border:5px solid white;
             box-shadow: 0 0 0px 5px black;
-            background: url(../imgs/pizza_Funnel.svg) no-repeat center top / cover;
-            #{$self}.disabled &{
+            // background: url(../imgs/pizza_Funnel.svg) no-repeat center top / cover;
+            /* #{$self}.disabled &{
                 opacity:.2
             }
             #{$self}.active & {
                 background: url(../imgs/pizza_Funnel--green.svg) no-repeat center top / cover;
                 box-shadow: 0 0 0px 5px rgba(0, 128, 0, 1);
                 opacity:1;
-            }
+            } */
+            
+            &--pizza{
+                @extend #{$self2};
+                background: url(../imgs/pizza_Funnel.svg) no-repeat center top / cover;
+                #{$self}.disabled &{
+                    opacity:.2
+                }
+                #{$self}.active & {
+                    background: url(../imgs/pizza_Funnel--green.svg) no-repeat center top / cover;
+                    box-shadow: 0 0 0px 5px rgba(0, 128, 0, 1);
+                    opacity:1;
+                }
+        }
+
             &--entrante {
                     @extend #{$self2};
                     background: url(../imgs/entrante_Funnel.svg) no-repeat center top / 87% 100%;

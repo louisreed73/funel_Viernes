@@ -22,25 +22,38 @@ function inicio() {
             {
                 name:"Triple de Telepizza: 3 familiares a domicilio por 12 € cada una",
                 steps:3,
-                substeps: [6,2,1]
+                substeps: [
+                    {unds:6,categ:"pizza"},
+                    {unds:2,categ:"entrante"},
+                    {unds:1,categ:"bebida"},
+                ]
      
             },
             {
                 name:"Ciberchollo L",
                 steps:2,
-                substeps: [3,1]
+                substeps: [
+                    {unds:3,categ:"pizza"},
+                    {unds:1,categ:"entrante"}
+                ]
      
             },
             {
                 name:"Ciberchollo XL",
                 steps:1,
-                substeps: [1]
+                substeps: [
+                    {unds:1,categ:"pizza"}
+                ]
+
      
             },
             {
                 name:"2X1 en tus pizzas medianas y familiares",
                 steps:2,
-                substeps: [1,1]
+                substeps: [
+                    {unds:1,categ:"pizza"},
+                    {unds:1,categ:"bebida"}
+                ]
      
             }
         ]
