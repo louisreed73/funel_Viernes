@@ -8,23 +8,22 @@ import '../scss/main_index.scss';
 
 import {pedido} from './pedido';
 
-const containter=document.querySelector(".c_containerP");
+const container=document.querySelector(".c_containerP");
 
-containter.addEventListener("click",(e)=>{
-    if(e.target!==e.currentTarget&&e.target.classList.contains("c_oferta__ContentBtn")) {
+container.addEventListener("click",(e)=>{
+    if(e.target!==e.currentTarget) {
         // console.log(e.target.dataset.oferta);
+        // console.log("clickeado!!!",e.target.closest(".c_oferta"))
 
-
-
-        let pedidoAct=e.target.dataset.oferta;
-
+        let elem=e.target.closest(".c_oferta"),
+        pedidoAct=+elem.closest(".c_oferta").dataset.oferta;
         pedido.setPedido(pedidoAct);
-        console.log(pedido.getPedido())
-
-    }
-    e.preventDefault();
-    setTimeout(()=>{
-
-        location.href="./funnel.html";
-    },1000)
+        // console.log(pedido.getPedido()) 
+       
+         e.preventDefault();
+            setTimeout(()=>{
+                
+                        location.href="./funnel.html";
+                    },100) 
+                }
 })

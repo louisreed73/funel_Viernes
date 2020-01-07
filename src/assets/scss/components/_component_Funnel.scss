@@ -35,6 +35,7 @@
     &__Icons {
         position:relative;
         padding:3rem 0 0;
+        min-height:17.8rem;
 
 
         display:flex;
@@ -73,9 +74,14 @@
 
         }
         &Text{
+            $self:&;
             display:block;
             margin-top:1rem;
             text-align:center;
+            &--Substeps {
+                @extend #{$self}
+            }
+
         }
     }
 
@@ -90,10 +96,17 @@
         flex-flow:column;
         border-radius: .5rem;
         margin-bottom: 3rem;
+        cursor:pointer;
+        
+        &.active {
+            border: 1px solid rgba(0, 128, 0, 1);
+
+        }
 
 
         
         &Icon {
+            $self2:&;
             display: block;
             width:5rem;
             height:5rem;            
@@ -101,12 +114,37 @@
             border:5px solid white;
             box-shadow: 0 0 0px 5px black;
             background: url(../imgs/pizza_Funnel.svg) no-repeat center top / cover;
+            #{$self}.disabled &{
+                opacity:.2
+            }
             #{$self}.active & {
                 background: url(../imgs/pizza_Funnel--green.svg) no-repeat center top / cover;
                 box-shadow: 0 0 0px 5px rgba(0, 128, 0, 1);
+                opacity:1;
             }
-            #{$self}.disabled &{
-                opacity:.2
+            &--entrante {
+                    @extend #{$self2};
+                    background: url(../imgs/entrante_Funnel.svg) no-repeat center top / 87% 100%;
+                    #{$self}.disabled &{
+                        opacity:.2
+                    }
+                    #{$self}.active & {
+                        background: url(../imgs/entrante_Funnel--green.svg) no-repeat center top / 87% 100%;
+                        box-shadow: 0 0 0px 5px rgba(0, 128, 0, 1);
+                        opacity:1;
+                    }
+            }
+            &--bebida {
+                    @extend #{$self2};
+                    background: url(../imgs/bebida_Funnel.svg) no-repeat center top / cover;
+                    #{$self}.disabled &{
+                        opacity:.2
+                    }
+                    #{$self}.active & {
+                        background: url(../imgs/bebida_Funnel--green.svg) no-repeat center top / cover;
+                        box-shadow: 0 0 0px 5px rgba(0, 128, 0, 1);
+                        opacity:1;
+                    }
             }
         }
 
@@ -121,11 +159,12 @@
             font-size: 2.2em;
 
         }
-        &.active::after {
-            color:rgba(0, 128, 0, 1);
-        }
         &.disabled::after {
             opacity:.2;
+        }
+        &.active::after {
+            color:rgba(0, 128, 0, 1);
+            opacity:1;
         }
 
 
@@ -136,16 +175,18 @@
             font-size:1.25em; 
             padding-right:2rem;
             margin-bottom: 1rem;
-            #{$self}.active & {
-                color:rgba(0, 128, 0, 1);
-            }
             #{$self}.disabled &{
                 opacity:.2
             }           
+            #{$self}.active & {
+                color:rgba(0, 128, 0, 1);
+                opacity:1;
+            }
             
             
             #{$self}._active &{
                 color:green;
+                opacity:1;
 
             }  
         }
@@ -239,15 +280,27 @@
 }
 
 
+$final0:2 ;
 $final1:3 ;
 $final2:4 ;
 $final3:7 ;
 
+.c_funnel__progressValue {
+    width:0;
+    transition:min-width .5s ease-in-out;
+}
 
-@for $i from 1 to $final1 {
+@for $i from 0 to $final0 {
+    $average:100/($final0 - 1);
+    .prog_#{$i}_of_#{$final0 - 1} {
+        min-width: $average * $i * 1%;
+    }
+}
+
+@for $i from 0 to $final1 {
     $average:100/($final1 - 1);
     .prog_#{$i}_of_#{$final1 - 1} {
-        width: $average * $i * 1%;
+        min-width: $average * $i * 1%;
     }
 }
 
@@ -256,22 +309,18 @@ $final3:7 ;
 
     
     
-    @for $i from 1 to $final2 {
+    @for $i from 0 to $final2 {
         $average:100/($final2 - 1);
         .prog_#{$i}_of_#{$final2 - 1} {
-            width: $average * $i * 1%;
+            min-width: $average * $i * 1%;
         }
     }
 
-    @for $i from 1 to $final3 {
+    @for $i from 0 to $final3 {
         $average:100/($final3 - 1);
         .prog_#{$i}_of_#{$final3 - 1} {
-            width: $average * $i * 1%;
+            min-width: $average * $i * 1%;
         }
     }
 
 
-/* .active {
-    color: green;
-    
-} */
