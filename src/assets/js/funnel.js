@@ -14,6 +14,7 @@ let _pasoActPage=0;
 // console.log("Hola!!!!",pedido.getPedido());
 //elemento Nombre de la Oferta
 let ofertaName=document.querySelector(".c_funnel__Head :nth-child(2)"),
+// let ofertaNameAdded=document.querySelector("c_funnel__icLinkText"),
 //Elemento span con el texto del step Actual
     stepAct=document.querySelector(".c_funnel__progress--Steps .c_funnel__progressText :nth-child(1)"),
 //Elemento span con el texto del parrafo completo para compra Finalizada
@@ -34,6 +35,7 @@ let ofertaName=document.querySelector(".c_funnel__Head :nth-child(2)"),
     indPasoCategName=document.querySelector("[data-stepID] span"),
     indPasoCategCont=document.querySelector(".c_funnel__Info"),
     botones=document.querySelector(".c_funnel__buttons"),
+    padreContainerSelect=document.querySelector(".c_funnelSelect"),
    
 
     // Elemento con la clase que realiza el cambio de color de progreso % de los subssteps, padre Container
@@ -48,7 +50,7 @@ let ofertaName=document.querySelector(".c_funnel__Head :nth-child(2)"),
         //Recuperación del objeto con la oferta seleccionada
         ofertaAct=pedido.getOfertas(pedidoActIndice);
 
-        console.log(ofertaAct.name,ofertaAct.steps,ofertaAct.substeps)
+        // console.log(ofertaAct.name,ofertaAct.steps,ofertaAct.substeps)
 
 
 
@@ -75,7 +77,7 @@ function inicioCargaPaso(paso,categ) {
 }
 
 function dibujaProgreso(pasoAct,pasos,elementoClase) {
-    console.log(pasoAct);
+    // console.log(pasoAct);
     let nuevaClass=elementoClase.classList.value.replace(/\bprog\w+/g,`prog_${pasoAct}_of_${pasos}`);
     elementoClase.classList=nuevaClass;
 
@@ -99,11 +101,41 @@ function dibujaIconsPaso(cantidad,padre,categ) {
     padre.innerHTML=inner;
 }
 
+function dibujaSelectPaso(datosSelect,padre) {
+    let inner="";
+   for (let i=0;i<datosSelect.length;i++)  {
+       inner+=`
+       <div class="c_oferta" data-oferta="${i}">
+       <div class="c_oferta__Content">
+           <div class="c_oferta__ContentText">
+               ${datosSelect[i].name}
+           </div>
+           
+               <button class="c_oferta__ContentBtn" data-codeItem="${i}" data-codeName="${datosSelect[i].name}">añadir</button>
+           
+       </div>
+       <div class="c_oferta__Img">
+           <img src="${datosSelect[i].image}" alt="${datosSelect[i].name}" srcset="">
+       </div>
+   </div>
+
+       `
+   }
+
+    // console.log(inner,padre);
+
+    padre.innerHTML=inner;
+}
+
+
+
+
 function inicioPagina() {
     inicioCargaPaso(_pasoActPage,ofertaAct.substeps[_pasoActPage].categ);
     dibujaProgreso(_pasoActPage+1,ofertaAct.steps,stepProgress)
     dibujaProgreso(0,ofertaAct.substeps[_pasoActPage].unds ,subStepsProgress)
     dibujaIconsPaso(ofertaAct.substeps[_pasoActPage].unds,iconosPaso,ofertaAct.substeps[_pasoActPage].categ);
+    dibujaSelectPaso(ofertaAct.substeps[_pasoActPage].select,padreContainerSelect)
     
 }
 
@@ -118,7 +150,7 @@ inicioPagina();
 
 
 
-console.log(subStepsProgress);
+// console.log(subStepsProgress);
 
 
 //Funciones helpers de los add Items listener
@@ -126,7 +158,7 @@ console.log(subStepsProgress);
 function stepComplete(e) {
 
     setTimeout(()=>{
-        console.log("Ahora si puedes pasar a la otra página!!!!!");
+        // console.log("Ahora si puedes pasar a la otra página!!!!!");
         indicadorPasoCateg.dataset.stepid="1"
 
         btnNext.classList.add("disabled");
@@ -205,6 +237,7 @@ function addItem(e){
         e.preventDefault();
 
         let codeItemAdded=e.target.dataset.codeitem,
+        itemAddedName=e.target.dataset.codename,
         elemsIconos=document.querySelectorAll(".c_funnel__icLink"),
         elemsActivated=[...elemsIconos].filter(elem=>{
             return elem.classList.contains("active")
@@ -212,6 +245,8 @@ function addItem(e){
         elemstoActivate=[...elemsIconos].filter(elem=>{
             return !elem.classList.contains("active")
         });
+
+        console.log("Item Code Added nº: ",codeItemAdded,itemAddedName)
 
         // subStepAct.textContent=elemsActivated.length;
 
@@ -225,12 +260,14 @@ function addItem(e){
 
 
             elemstoActivate[0].classList.add("active");
+            console.log(elemstoActivate[0], elemstoActivate[0].firstElementChild,itemAddedName)
+            elemstoActivate[0].firstElementChild.textContent=itemAddedName;
             elemsActivated=[...elemsIconos].filter(elem=>{
                 return elem.classList.contains("active")
             });
 
             
-            console.log(elemsActivated.length)
+            // console.log(elemsActivated.length)
             subStepAct.textContent=elemsActivated.length;
 
             dibujaProgreso(elemsActivated.length,ofertaAct.substeps[_pasoActPage].unds,subStepsProgress);
@@ -240,7 +277,7 @@ function addItem(e){
             // console.log(numeroIconos)
             // console.log("Substeps length: ",ofertaAct.substeps.length, "Paso Page: ",_pasoActPage)
 
-            console.log( "Desde paso de pagina: ",elemsActivated.length)
+            // console.log( "Desde paso de pagina: ",elemsActivated.length)
 
 
 
@@ -250,7 +287,7 @@ function addItem(e){
 
             dibujaProgreso(elemsActivated.length,ofertaAct.substeps[_pasoActPage].unds,subStepsProgress);
             btnNext.classList.toggle("disabled");
-            console.log("Has finalizado!!!");
+            // console.log("Has finalizado!!!");
            
             _pasoActPage++;
             
