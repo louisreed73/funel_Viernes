@@ -1,0 +1,35 @@
+.c_compraFinal {
+
+    width:100%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    align-items:stretch;
+    font-size:1.5rem;
+
+    &__Substep {
+        flex: 1;
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:center;
+        align-items:center;
+        // border: 1px solid gainsboro;
+        padding: 1rem;
+    }
+
+  
+    &__SubstepItem {
+        // margin-right: 2.1rem;
+        margin-bottom: 0.2rem;
+        text-align: center;
+        padding: 0.7rem;
+        border: .15rem solid gainsboro;
+        
+    
+        
+
+   /*      &:last-child {
+            margin-right:0;
+        } */
+    }
+}

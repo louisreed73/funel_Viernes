@@ -198,11 +198,11 @@ const pedido = (function () {
                             },
                             {
                                 name:"Entrante Tipo 3",
-                                image:"./assets/imgs/entrante_select_3.jpng"
+                                image:"./assets/imgs/entrante_select_3.png"
                             },
                             {
                                 name:"Entrante Tipo 4",
-                                image:"./assets/imgs/entrante_select_4.jpng"
+                                image:"./assets/imgs/entrante_select_4.png"
                             }
                         ]
                     },
@@ -246,7 +246,7 @@ const pedido = (function () {
                                 },
                                 {
                                     name:"Pizza Tipo 2",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_2.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 3",
