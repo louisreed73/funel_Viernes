@@ -60,6 +60,17 @@ ofertaName.textContent=ofertaAct.name;
 stepCount.textContent=ofertaAct.steps;
 //Renderizar el número de Pasos - textContent
 
+
+function insertaImg(padre,src,alt) {
+    let img=document.createElement("img");
+    img.src=src;
+    img.alt=alt;
+
+    console.log(img)
+    padre.appendChild(img);
+
+}
+
 function inicioCargaPaso(paso,categ) {
     stepAct.textContent=paso+1;
     subStepAct.textContent=0;
@@ -262,6 +273,15 @@ function addItem(e){
             elemstoActivate[0].classList.add("active");
             console.log(elemstoActivate[0], elemstoActivate[0].firstElementChild,itemAddedName)
             elemstoActivate[0].firstElementChild.textContent=itemAddedName;
+            elemstoActivate[0].lastElementChild.style.display="none";
+            console.log(elemstoActivate[0],ofertaAct.substeps[_pasoActPage].select[codeItemAdded].image)
+            insertaImg(elemstoActivate[0],
+                ofertaAct.substeps[_pasoActPage].select[codeItemAdded].image,
+                ofertaAct.substeps[_pasoActPage].select[codeItemAdded].name
+                );
+            // elemstoActivate[0].lastElementChild.style.display="none";
+            // elemstoActivate[0].lastElementChild.style.display="none";
+
             elemsActivated=[...elemsIconos].filter(elem=>{
                 return elem.classList.contains("active")
             });

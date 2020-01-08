@@ -97,6 +97,10 @@
         border-radius: .5rem;
         margin-bottom: 3rem;
         cursor:pointer;
+
+        img {
+            width: 20rem;
+        }
         
         &.active {
             border: 1px solid rgba(0, 128, 0, 1);

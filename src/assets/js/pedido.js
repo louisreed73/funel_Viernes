@@ -22,19 +22,19 @@ const pedido = (function () {
                             select:[
                                 {
                                     name:"Pizza Tipo 1",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_1.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 2",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_2.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 3",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_3.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 4",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_4.jpg"
                                 }
                             ]
                         },
@@ -44,42 +44,42 @@ const pedido = (function () {
                             select:[
                                 {
                                     name:"Entrante Tipo 1",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/entrante_select_1.png"
                                 },
                                 {
                                     name:"Entrante Tipo 2",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/entrante_select_2.png"
                                 },
                                 {
                                     name:"Entrante Tipo 3",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/entrante_select_3.png"
                                 },
                                 {
                                     name:"Entrante Tipo 4",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/entrante_select_4.png"
                                 }
                             ]
                         },
                         {
-                            unds: 1,
+                            unds: 2,
                             categ: "bebida",
                             select:[
                                 {
                                     name:"Bebida Tipo 1",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/bebida_select_1.png"
                                 },
                                 {
                                     name:"Bebida Tipo 2",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/bebida_select_2.png"
                                 },
                                 {
                                     name:"Bebida Tipo 3",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/bebida_select_3.png"
                                 },
                                 {
                                     name:"Bebida Tipo 4",
-                                    image:"./assets/imgs/image_dummy.png"
-                                },
+                                    image:"./assets/imgs/bebida_select_4.png"
+                                }
                             ]
                         },
                     ]
@@ -87,7 +87,7 @@ const pedido = (function () {
                 },
                 {
                     name: "Ciberchollo L",
-                    steps: 2,
+                    steps: 3,
                     substeps: [
                         {
                             unds: 3,
@@ -95,19 +95,19 @@ const pedido = (function () {
                             select:[
                                 {
                                     name:"Pizza Tipo 1",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_1.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 2",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_2.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 3",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_3.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 4",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_4.jpg"
                                 }
                             ]
                         },
@@ -117,19 +117,41 @@ const pedido = (function () {
                             select:[
                                 {
                                     name:"Entrante Tipo 1",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/entrante_select_1.png"
                                 },
                                 {
                                     name:"Entrante Tipo 2",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/entrante_select_2.png"
                                 },
                                 {
                                     name:"Entrante Tipo 3",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/entrante_select_3.png"
                                 },
                                 {
                                     name:"Entrante Tipo 4",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/entrante_select_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            unds: 2,
+                            categ: "bebida",
+                            select:[
+                                {
+                                    name:"Bebida Tipo 1",
+                                    image:"./assets/imgs/bebida_select_1.png"
+                                },
+                                {
+                                    name:"Bebida Tipo 2",
+                                    image:"./assets/imgs/bebida_select_2.png"
+                                },
+                                {
+                                    name:"Bebida Tipo 3",
+                                    image:"./assets/imgs/bebida_select_3.png"
+                                },
+                                {
+                                    name:"Bebida Tipo 4",
+                                    image:"./assets/imgs/bebida_select_4.png"
                                 }
                             ]
                         }
@@ -138,27 +160,71 @@ const pedido = (function () {
                 },
                 {
                     name: "Ciberchollo XL",
-                    steps: 1,
+                    steps: 2,
                     substeps: [
                         {
-                        unds: 1,
+                        unds: 2,
                         categ: "pizza",
                         select:[
                             {
                                 name:"Pizza Tipo 1",
-                                image:"./assets/imgs/image_dummy.png"
+                                image:"./assets/imgs/pizza_select_1.jpg"
                             },
                             {
                                 name:"Pizza Tipo 2",
-                                image:"./assets/imgs/image_dummy.png"
+                                image:"./assets/imgs/pizza_select_2.jpg"
                             },
                             {
                                 name:"Pizza Tipo 3",
-                                image:"./assets/imgs/image_dummy.png"
+                                image:"./assets/imgs/pizza_select_3.jpg"
                             },
                             {
                                 name:"Pizza Tipo 4",
-                                image:"./assets/imgs/image_dummy.png"
+                                image:"./assets/imgs/pizza_select_4.jpg"
+                            }
+                        ]
+                    },
+                    {
+                        unds: 2,
+                        categ: "entrante",
+                        select:[
+                            {
+                                name:"Entrante Tipo 1",
+                                image:"./assets/imgs/entrante_select_1.png"
+                            },
+                            {
+                                name:"Entrante Tipo 2",
+                                image:"./assets/imgs/entrante_select_2.png"
+                            },
+                            {
+                                name:"Entrante Tipo 3",
+                                image:"./assets/imgs/entrante_select_3.jpng"
+                            },
+                            {
+                                name:"Entrante Tipo 4",
+                                image:"./assets/imgs/entrante_select_4.jpng"
+                            }
+                        ]
+                    },
+                    {
+                        unds: 2,
+                        categ: "bebida",
+                        select:[
+                            {
+                                name:"Bebida Tipo 1",
+                                image:"./assets/imgs/bebida_select_1.png"
+                            },
+                            {
+                                name:"Bebida Tipo 2",
+                                image:"./assets/imgs/bebida_select_2.png"
+                            },
+                            {
+                                name:"Bebida Tipo 3",
+                                image:"./assets/imgs/bebida_select_3.png"
+                            },
+                            {
+                                name:"Bebida Tipo 4",
+                                image:"./assets/imgs/bebida_select_4.png"
                             }
                         ]
                     }
@@ -171,12 +237,12 @@ const pedido = (function () {
                     steps: 2,
                     substeps: [
                         {
-                            unds: 1,
+                            unds: 2,
                             categ: "pizza",
                             select:[
                                 {
                                     name:"Pizza Tipo 1",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_1.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 2",
@@ -184,11 +250,11 @@ const pedido = (function () {
                                 },
                                 {
                                     name:"Pizza Tipo 3",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_3.jpg"
                                 },
                                 {
                                     name:"Pizza Tipo 4",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/pizza_select_4.jpg"
                                 }
                             ]
                         },
@@ -198,20 +264,20 @@ const pedido = (function () {
                             select:[
                                 {
                                     name:"Bebida Tipo 1",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/bebida_select_1.png"
                                 },
                                 {
                                     name:"Bebida Tipo 2",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/bebida_select_2.png"
                                 },
                                 {
                                     name:"Bebida Tipo 3",
-                                    image:"./assets/imgs/image_dummy.png"
+                                    image:"./assets/imgs/bebida_select_3.png"
                                 },
                                 {
                                     name:"Bebida Tipo 4",
-                                    image:"./assets/imgs/image_dummy.png"
-                                },
+                                    image:"./assets/imgs/bebida_select_4.png"
+                                }
                             ]
                         }
                     ]
