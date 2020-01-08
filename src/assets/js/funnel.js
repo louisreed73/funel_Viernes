@@ -136,7 +136,7 @@ function stepComplete(e) {
 }
 
 
-function addItem(e) {
+/* function addItem0(e) {
     if(e.target!==e.currentTarget) {
         e.target.closest(".c_funnel__icLink").classList.add("active");
         let numeroIconos=document.querySelectorAll(".c_funnel__icLink.active").length;
@@ -193,12 +193,12 @@ function addItem(e) {
 
     }
 
-}
+} */
 
 
-iconosPaso.addEventListener("click",addItem)
+// iconosPaso.addEventListener("click",addItem0)
 
-containerSelect.addEventListener("click",(e)=>{
+function addItem(e){
 
     if( e.target!==e.currentTarget&&e.target.classList.contains("c_oferta__ContentBtn") ) {
 
@@ -286,7 +286,11 @@ containerSelect.addEventListener("click",(e)=>{
 
     }
     
-})
+}
+
+
+
+containerSelect.addEventListener("click",addItem)
 
 
 
