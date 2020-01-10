@@ -91,6 +91,7 @@ function insertaImg_and_text(padre,event) {
 
 function inicioCargaPaso(paso, categ) {
     stepAct.textContent = paso + 1;
+    
     subStepAct.textContent = 0;
     //Renderizar el número de Pasos - textContent
     subStepCount.textContent = ofertaAct.substeps[paso].unds;
@@ -102,6 +103,18 @@ function inicioCargaPaso(paso, categ) {
     }
     //Renderizar la clase actual, estado del progreso
 
+
+}
+
+function dibujaProgresoStepGen(paso) {
+
+   
+
+    let pasos=ofertaAct.steps,
+    elementoClase=stepProgress;
+    // console.log(pasoAct);
+    let nuevaClass = elementoClase.classList.value.replace(/\bprog\w+/g, `prog_${paso+1}_of_${pasos}`);
+    elementoClase.classList = nuevaClass;
 
 }
 
@@ -205,15 +218,12 @@ function inicioPagina() {
 
     if(ofertaAct.substeps[_pasoActPage.value]) {
 
-        //Renderizar el nombre de la Oferta - textContent
-ofertaName.textContent = ofertaAct.name;
-//Renderizar el número de Pasos - textContent
-stepCount.textContent = ofertaAct.steps;
-//Renderizar el número de Pasos - textContent
+        indicadorPasoCateg.style.opacity=1;
         
         inicioCargaPaso(_pasoActPage.value, ofertaAct.substeps[_pasoActPage.value].categ);
-        // dibujaProgreso(_pasoActPage.value + 1)
-        // dibujaProgreso(0)
+        // dibujaProgreso(_pasoActPage.value)
+        dibujaProgreso(0)
+        dibujaProgresoStepGen(_pasoActPage.value)
         dibujaIconsPaso(ofertaAct.substeps[_pasoActPage.value].unds, iconosPaso, ofertaAct.substeps[_pasoActPage.value].categ);
         dibujaSelectPaso(ofertaAct.substeps[_pasoActPage.value].select, padreContainerSelect)
     }
@@ -337,6 +347,8 @@ function addItem(e) {
 
         dibujaProgreso(elemsActivated.length);
 
+        console.log("UNIDADES AÑADIDAS: ",ofertaAct.substeps[_pasoActPage.value].unds,_objPedido)
+
         indicadorPasoCateg.dataset.stepid++;
 
 
@@ -349,20 +361,21 @@ function addItem(e) {
         if (elemsActivated.length === ofertaAct.substeps[_pasoActPage.value].unds) {
 
             
-            dibujaProgreso(elemsActivated.length, ofertaAct.substeps[_pasoActPage.value].unds, subStepsProgress);
+            // dibujaProgreso(elemsActivated.length, ofertaAct.substeps[_pasoActPage.value].unds, subStepsProgress);
             btnNext.classList.toggle("disabled");
+            indicadorPasoCateg.style.opacity=0;
             
             // Sumar 1 al substep actual
         // _pasoActPage.value=++_pasoActPageV;
 
-            console.log("Quiero sacar los elementos activados!!!",elemsActivated)
+            // console.log("Quiero sacar los elementos activados!!!",elemsActivated)
 
 
             
 
             document.querySelector(".btn_Next").addEventListener("click", stepComplete)
 
-            console.log("La pagina actual es: ",_pasoActPage.value)
+            // console.log("La pagina actual es: ",_pasoActPage.value)
 
 
 
